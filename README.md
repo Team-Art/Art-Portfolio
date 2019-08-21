@@ -1,2 +1,0 @@
-# Art-Portfolio
-Art Portfolio

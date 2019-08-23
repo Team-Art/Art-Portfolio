@@ -1,17 +1,40 @@
-import React from 'react';
+import React, {useState} from 'react';
+import { withFormik, Form, Field } from "formik";
 
-export default function SignInForm() {
+function SignInForm() {
+
     return(
         <div>
-            <form>
-                <input
-                    type="email"
-                    name="email"/>
-                <input
-                    type="password"
-                    name="password"/>
+            <Form>
+                <lable>
+                    Email
+                    <Field
+                        type="email"
+                        name="email" />
+                </lable>
+                <lable>
+                    Password
+                    <Field
+                        type="password"
+                        name="password" />
+                </lable>
                 <button>Let's Go!</button>
-            </form>
+            </Form>
         </div>
     )
 }
+
+const FormikSignInForm = withFormik({
+    mapPropsToValues({ email, password }) {
+      return {
+        email: email || "",
+        password: password || ""
+      };
+    },
+  
+    handleSubmit(values) {
+      console.log(values);
+    }
+  })(SignInForm);
+
+export default FormikSignInForm

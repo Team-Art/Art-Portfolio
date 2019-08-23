@@ -1,11 +1,23 @@
 import React from 'react';
 import { withFormik, Form, Field } from "formik";
 
-function SignInForm() {
+function SignUpForm() {
 
     return(
         <div>
             <Form>
+            <lable>
+                    First Name
+                    <Field
+                        type="text"
+                        name="firstName" />
+                </lable>
+                <lable>
+                    Last Name
+                    <Field
+                        type="text"
+                        name="lastName" />
+                </lable>
                 <lable>
                     Email
                     <Field
@@ -24,9 +36,11 @@ function SignInForm() {
     )
 }
 
-const FormikSignInForm = withFormik({
-    mapPropsToValues({ email, password }) {
+const FormikSignUpForm = withFormik({
+    mapPropsToValues({ firstName, lastName, email, password }) {
         return {
+            firstName: firstName || "",
+            lastName: lastName || "",
             email: email || "",
             password: password || ""
         };
@@ -35,6 +49,6 @@ const FormikSignInForm = withFormik({
     handleSubmit(values) {
         console.log(values);
     }
-})(SignInForm);
+})(SignUpForm);
 
-export default FormikSignInForm
+export default FormikSignUpForm

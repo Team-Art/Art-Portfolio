@@ -6,7 +6,7 @@ function SignUpForm() {
     return(
         <div>
             <Form>
-            <lable>
+                <lable>
                     First Name
                     <Field
                         type="text"
@@ -22,13 +22,15 @@ function SignUpForm() {
                     Email
                     <Field
                         type="email"
-                        name="email" />
+                        name="email" 
+                        placeholder="email@example.com"/>
                 </lable>
                 <lable>
                     Password
                     <Field
                         type="password"
-                        name="password" />
+                        name="password"
+                        placeholder="Must have 8 characters" />
                 </lable>
                 <button type="submit">Let's Go!</button>
             </Form>

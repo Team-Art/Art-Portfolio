@@ -1,11 +1,12 @@
 import React from 'react';
 import { withFormik, Form, Field } from "formik";
+import "./SignInForm.css"
 
 function SignInForm() {
 
     return(
-        <div>
-            <Form>
+        <div class="container">
+            <Form className="form">
                 <lable>
                     Email
                     <Field

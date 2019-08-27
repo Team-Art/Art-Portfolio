@@ -3,11 +3,10 @@
     max-width: 1441px;
     height: 655px;
     left: 0px;
-    top: 89px;
     background: linear-gradient(204.44deg, #BD7AE3 0%, #8461C9 100%);
     display: flex;
     flex-direction: column;
-    padding-top: 100px;
+    padding-top: 150px;
     color: white;
 }
 
@@ -18,12 +17,26 @@
     justify-content: space-between;
 }
 
+.signUpForm {
+    flex-direction: row;
+    width: 520px;
+    flex-wrap: wrap;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
  .input {
     background-color: white;
     border-radius: 6px;
     border: none;
     width: 240px;
     height: 48px;
+    font-size: 18px;
+    box-sizing: border-box;
+    padding: 15px;
 }
 
 p {
@@ -31,6 +44,18 @@ p {
     width: 240px;
     margin: 0 auto 10px;
     font-size: 1.5rem;
+}
+
+.msg {
+    width: auto;
+    margin-top: -100px;
+    font-size: 1.3rem;
+}
+
+.title {
+    width: auto;
+    margin: 50px auto 30px ;
+    font-size: 2rem;
 }
 
 lable {
@@ -52,112 +77,7 @@ color: white;
 font-size: 18px;
 margin: 10px 0 0 37.5%;
 }
-/*
-.emailField {
-    left: 600px;
-    top: 281px;
-}
-
-.passField {
-    left: 600px;
-    top: 369px;
-}
-
-.signIn {
-    color: #FCFCFC;
-    position: absolute;
-width: 66px;
-height: 26px;
-left: 590px;
-top: 200px;
-font-size: 22px;
-line-height: 26px;
-width: 80px;
-}
-
-.emailText {
-    color: #FCFCFC;
-    position: absolute;
-width: 58px;
-height: 20px;
-left: 590px;
-top: 261px;
-}
-
-.passText{
-    color: #FCFCFC;
-    position: absolute;
-width: 104px;
-height: 20px;
-left: 580px;
-top: 349px
-}
 
 .signUpButton {
-    left: 833px;
-top: 505px;
+    margin: 15px 0 0 71%;
 }
-
-.firstNameField {
-    top: 311px;
-    left: 457px;
-}
-
-.firstNameText {
-    left: 457px;
-    top: 291px;
-}
-
-.lastNameField {
-    left: 743px;
-    top: 311px;
-}
-
-.lastNameText {
-    left: 743px;
-    top: 291px;
-}
-
-.signUpEmailField {
-    left: 457px;
-    top: 408px; 
-}
-
-.signUpEmailText {
-    left: 457px;
-    top: 388px;
-}
-
-.signUpPassField {
-    left: 743px;
-    top: 408px;
-}
-
-.signupPassText {
-    left: 743px;
-    top: 388px;
-}
-
-.msg {
-    position: absolute;
-width: 700px;
-height: 58px;
-left: 370px;
-top: 120px;
-font-size: 24px;
-line-height: 29px;
-
-color: #FFFFFF;
-}
-
-.title {
-    position: absolute;
-width: 247px;
-height: 42px;
-left: 596px;
-top: 200px;
-font-size: 36px;
-line-height: 42px;
-
-color: white;
-} */

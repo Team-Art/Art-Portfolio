@@ -8,29 +8,33 @@ function SignUpForm() {
         <div class="container">
             <p class="msg">A space where you can discover and connect with designers worldwide.</p>
             <p class="title">Create Account</p>
-            <Form className="form">
-                <lable class="firstNameText">First Name</lable>
+            <Form className="form signUpForm">
+                <div class="card">
+                <lable>First Name</lable>
                     <Field className="input firstNameField"
                         type="text"
                         name="firstName" />
-                
-                <lable class="lastNameText"> Last Name</lable>
+                </div>
+                <div class="card">
+                <lable> Last Name</lable>
                     <Field className="input lastNameField"
                         type="text"
                         name="lastName" />
-                
-                <lable class="signUpEmailText">Email</lable>
+                </div>
+                <div class="card">
+                <lable>Email</lable>
                     <Field className="input signUpEmailField"
                         type="email"
                         name="email" 
                         placeholder="email@example.com"/>
-                
-                <lable class="signUpPassText">Password</lable>
+                </div>
+                <div class="card">
+                <lable>Password</lable>
                     <Field className="input signUpPassField"
                         type="password"
                         name="password"
                         placeholder="Must have 8 characters" />
-                
+                </div>
                 <button class="signUpButton" type="submit">Let's Go!</button>
             </Form>
         </div>

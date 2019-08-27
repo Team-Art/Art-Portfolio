@@ -6,7 +6,7 @@ function SignInForm() {
 
     return(
         <div class="container">
-            <p>Sign In</p>
+            <p class="signIn">Sign In</p>
 
             <Form className="form">
                 <lable class="emailText"> Email </lable>

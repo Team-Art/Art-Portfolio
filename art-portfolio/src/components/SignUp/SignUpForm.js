@@ -6,34 +6,32 @@ function SignUpForm() {
 
     return(
         <div class="container">
+            <p class="msg">A space where you can discover and connect with designers worldwide.</p>
+            <p class="title">Create Account</p>
             <Form className="form">
-                <lable>
-                    First Name
-                    <Field
+                <lable class="firstNameText">First Name</lable>
+                    <Field className="input firstNameField"
                         type="text"
                         name="firstName" />
-                </lable>
-                <lable>
-                    Last Name
-                    <Field
+                
+                <lable class="lastNameText"> Last Name</lable>
+                    <Field className="input lastNameField"
                         type="text"
                         name="lastName" />
-                </lable>
-                <lable>
-                    Email
-                    <Field
+                
+                <lable class="signUpEmailText">Email</lable>
+                    <Field className="input signUpEmailField"
                         type="email"
                         name="email" 
                         placeholder="email@example.com"/>
-                </lable>
-                <lable>
-                    Password
-                    <Field
+                
+                <lable class="signUpPassText">Password</lable>
+                    <Field className="input signUpPassField"
                         type="password"
                         name="password"
                         placeholder="Must have 8 characters" />
-                </lable>
-                <button type="submit">Let's Go!</button>
+                
+                <button class="signUpButton" type="submit">Let's Go!</button>
             </Form>
         </div>
     )

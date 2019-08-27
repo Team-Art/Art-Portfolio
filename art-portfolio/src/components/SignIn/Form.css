@@ -16,31 +16,30 @@
     background-color: white;
     border-radius: 6px;
     border: none;
+    width: 240px;
+    height: 48px;
 }
 
 .emailField {
-    width: 240px;
-    height: 48px;
     left: 600px;
     top: 281px;
 }
 
 .passField {
-    width: 240px;
-    height: 48px;
     left: 600px;
     top: 369px;
 }
 
-p {
+.signIn {
     color: #FCFCFC;
     position: absolute;
 width: 66px;
 height: 26px;
-left: 600px;
+left: 590px;
 top: 200px;
 font-size: 22px;
 line-height: 26px;
+width: 80px;
 }
 
 .emailText {
@@ -48,7 +47,7 @@ line-height: 26px;
     position: absolute;
 width: 58px;
 height: 20px;
-left: 600px;
+left: 590px;
 top: 261px;
 }
 
@@ -57,7 +56,7 @@ top: 261px;
     position: absolute;
 width: 104px;
 height: 20px;
-left: 600px;
+left: 580px;
 top: 349px
 }
 
@@ -67,6 +66,80 @@ width: 150px;
 height: 40px;
 left: 690px;
 top: 457px;
-
+background-color:rgba(104, 18, 189, 1);
+border: none;
+border-radius: 4px;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+color: white;
+font-size: 18px;
+}
+
+.signUpButton {
+    left: 833px;
+top: 505px;
+}
+
+.firstNameField {
+    top: 311px;
+    left: 457px;
+}
+
+.firstNameText {
+    left: 457px;
+    top: 291px;
+}
+
+.lastNameField {
+    left: 743px;
+    top: 311px;
+}
+
+.lastNameText {
+    left: 743px;
+    top: 291px;
+}
+
+.signUpEmailField {
+    left: 457px;
+    top: 408px; 
+}
+
+.signUpEmailText {
+    left: 457px;
+    top: 388px;
+}
+
+.signUpPassField {
+    left: 743px;
+    top: 408px;
+}
+
+.signupPassText {
+    left: 743px;
+    top: 388px;
+}
+
+.msg {
+    position: absolute;
+width: 700px;
+height: 58px;
+left: 370px;
+top: 120px;
+font-size: 24px;
+line-height: 29px;
+
+color: #FFFFFF;
+}
+
+.title {
+    position: absolute;
+width: 247px;
+height: 42px;
+left: 596px;
+top: 200px;
+font-size: 36px;
+line-height: 42px;
+
+color: white;
 }

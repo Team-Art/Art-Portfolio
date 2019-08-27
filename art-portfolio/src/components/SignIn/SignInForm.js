@@ -6,16 +6,16 @@ function SignInForm() {
 
     return(
         <div class="container">
-            <p class="signIn">Sign In</p>
+            <p>Sign In</p>
 
             <Form className="form">
-                <lable class="emailText"> Email </lable>
-                    <Field className="emailField input"
+                <lable> Email </lable>
+                    <Field className="input"
                         type="email"
                         name="email" />
 
-                <lable class="passText"> Password </lable>
-                    <Field className="passField input"
+                <lable> Password </lable>
+                    <Field className="input"
                         type="password"
                         name="password" />
 

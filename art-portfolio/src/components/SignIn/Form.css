@@ -1,18 +1,24 @@
 .container{
-    margin: 0 auto;
+    margin: 0 auto 0;
     max-width: 1441px;
     height: 655px;
     left: 0px;
     top: 89px;
     background: linear-gradient(204.44deg, #BD7AE3 0%, #8461C9 100%);
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+    color: white;
 }
 
 .form {
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.input {
-    position: absolute;
+ .input {
     background-color: white;
     border-radius: 6px;
     border: none;
@@ -20,6 +26,33 @@
     height: 48px;
 }
 
+p {
+    text-align: left;
+    width: 240px;
+    margin: 0 auto 10px;
+    font-size: 1.5rem;
+}
+
+lable {
+    text-align: left;
+}
+
+input {
+    margin-bottom: 25px;
+}
+
+button {
+width: 150px;
+height: 40px;
+background-color:rgba(104, 18, 189, 1);
+border: none;
+border-radius: 4px;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+color: white;
+font-size: 18px;
+margin: 10px 0 0 37.5%;
+}
+/*
 .emailField {
     left: 600px;
     top: 281px;
@@ -58,21 +91,6 @@ width: 104px;
 height: 20px;
 left: 580px;
 top: 349px
-}
-
-button {
-    position: absolute;
-width: 150px;
-height: 40px;
-left: 690px;
-top: 457px;
-background-color:rgba(104, 18, 189, 1);
-border: none;
-border-radius: 4px;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-color: white;
-font-size: 18px;
 }
 
 .signUpButton {
@@ -142,4 +160,4 @@ font-size: 36px;
 line-height: 42px;
 
 color: white;
-}
+} */

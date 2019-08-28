@@ -2,8 +2,9 @@ import React from 'react';
 import { withFormik, Form, Field } from "formik";
 import "../SignIn/Form.css";
 import axios from "axios";
+import * as Yup from "yup";
 
-function SignUpForm() {
+function SignUpForm({errors, touched}) {
 
     return(
         <div class="container">
@@ -11,6 +12,7 @@ function SignUpForm() {
             <p class="title">Create Account</p>
             <Form className="form signUpForm">
                 <div class="card">
+                {touched.firstName && errors.firstName && <p class="error">{errors.firstName}</p>} 
                 <lable>First Name</lable>
                     <Field className="input firstNameField"
                         type="text"
@@ -23,6 +25,7 @@ function SignUpForm() {
                         name="lastName" />
                 </div>
                 <div class="card">
+                {touched.email && errors.email && <p class="error">{errors.email}</p>}
                 <lable>Email</lable>
                     <Field className="input signUpEmailField"
                         type="email"
@@ -30,6 +33,7 @@ function SignUpForm() {
                         placeholder="email@example.com"/>
                 </div>
                 <div class="card">
+                {touched.password && errors.password && <p class="error">{errors.password}</p>}
                 <lable>Password</lable>
                     <Field className="input signUpPassField"
                         type="password"
@@ -51,6 +55,17 @@ const FormikSignUpForm = withFormik({
             password: password || ""
         };
     },
+
+    validationSchema: Yup.object().shape({
+        email: Yup.string()
+          .email()
+          .required(),
+        password: Yup.string()
+          .min(8)
+          .required(),
+        firstName: Yup.string()
+            .required("Your first name is required"),
+      }),
   
     handleSubmit(values) {
         console.log(values);

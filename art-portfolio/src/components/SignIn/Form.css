@@ -88,3 +88,8 @@ margin: 10px 0 0 37.5%;
 .signUpButton {
     margin: 15px 0 0 71%;
 }
+
+.error {
+    position: relative;
+    font-size: 1.2rem;
+}

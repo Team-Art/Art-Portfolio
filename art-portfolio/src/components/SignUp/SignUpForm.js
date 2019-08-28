@@ -1,39 +1,46 @@
 import React from 'react';
 import { withFormik, Form, Field } from "formik";
-import "../SignIn/Form.css"
+import "../SignIn/Form.css";
+import axios from "axios";
+import * as Yup from "yup";
 
-function SignUpForm() {
+function SignUpForm({errors, touched}) {
 
     return(
         <div class="container">
-            <Form className="form">
-                <lable>
-                    First Name
-                    <Field
+            <p class="msg">A space where you can discover and connect with designers worldwide.</p>
+            <p class="title">Create Account</p>
+            <Form className="form signUpForm">
+                <div class="card">
+                {touched.firstName && errors.firstName && <p class="error">{errors.firstName}</p>} 
+                <lable>First Name</lable>
+                    <Field className="input firstNameField"
                         type="text"
                         name="firstName" />
-                </lable>
-                <lable>
-                    Last Name
-                    <Field
+                </div>
+                <div class="card">
+                <lable> Last Name</lable>
+                    <Field className="input lastNameField"
                         type="text"
                         name="lastName" />
-                </lable>
-                <lable>
-                    Email
-                    <Field
+                </div>
+                <div class="card">
+                {touched.email && errors.email && <p class="error">{errors.email}</p>}
+                <lable>Email</lable>
+                    <Field className="input signUpEmailField"
                         type="email"
                         name="email" 
                         placeholder="email@example.com"/>
-                </lable>
-                <lable>
-                    Password
-                    <Field
+                </div>
+                <div class="card">
+                {touched.password && errors.password && <p class="error">{errors.password}</p>}
+                <lable>Password</lable>
+                    <Field className="input signUpPassField"
                         type="password"
                         name="password"
                         placeholder="Must have 8 characters" />
-                </lable>
-                <button type="submit">Let's Go!</button>
+                </div>
+                <button class="signUpButton" type="submit">Let's Go!</button>
             </Form>
         </div>
     )
@@ -48,9 +55,28 @@ const FormikSignUpForm = withFormik({
             password: password || ""
         };
     },
+
+    validationSchema: Yup.object().shape({
+        email: Yup.string()
+          .email()
+          .required(),
+        password: Yup.string()
+          .min(8)
+          .required(),
+        firstName: Yup.string()
+            .required("Your first name is required"),
+      }),
   
     handleSubmit(values) {
         console.log(values);
+        axios   
+            .post("server goes here", values)
+            .then(res => {
+                console.log(res)
+            })
+            .catch(err => {
+                console.log(err)
+            });
     }
 })(SignUpForm);
 

@@ -6,7 +6,7 @@ const footer={
 display:"flex",
 flexDirection:"column",
 justifyContent:"center",
-width:"1440px",
+maxWidth:"1440px",
 height:"150px",
 background:"linear-gradient( #3F3356,  #1A051D)",
 marginTop: "200px",

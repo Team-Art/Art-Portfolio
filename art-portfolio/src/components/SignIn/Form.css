@@ -6,7 +6,7 @@
     background: linear-gradient(204.44deg, #BD7AE3 0%, #8461C9 100%);
     display: flex;
     flex-direction: column;
-    padding-top: 150px;
+    padding-top: 50px;
     color: white;
 }
 
@@ -21,6 +21,10 @@
     flex-direction: row;
     width: 520px;
     flex-wrap: wrap;
+}
+
+.signInForm {
+    margin-top: 115px;
 }
 
 .card {

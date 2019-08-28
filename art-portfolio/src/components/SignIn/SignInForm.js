@@ -6,9 +6,10 @@ function SignInForm() {
 
     return(
         <div class="container">
-            <p>Sign In</p>
+            
 
-            <Form className="form">
+            <Form className="form signInForm">
+            <p>Sign In</p>
                 <lable> Email </lable>
                     <Field className="input"
                         type="email"

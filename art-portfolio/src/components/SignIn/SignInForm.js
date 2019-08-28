@@ -1,6 +1,7 @@
 import React from 'react';
 import { withFormik, Form, Field } from "formik";
-import "./Form.css"
+import "./Form.css";
+import axios from "axios";
 
 function SignInForm() {
 
@@ -38,6 +39,14 @@ const FormikSignInForm = withFormik({
   
     handleSubmit(values) {
         console.log(values);
+        axios   
+            .post("server goes here", values)
+            .then(res => {
+                console.log(res)
+            })
+            .catch(err => {
+                console.log(err)
+            });
     }
 })(SignInForm);
 

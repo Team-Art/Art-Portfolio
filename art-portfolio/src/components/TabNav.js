@@ -99,6 +99,8 @@ export default class MenuExampleSecondary extends Component {
 			onClick={this.handleItemClick}
 		  />
 		  <Menu.Item
+		  	as={Link}
+		  	to="/"
 			name='Home'
 			active={activeItem === 'Home'}
 			onClick={this.handleItemClick}

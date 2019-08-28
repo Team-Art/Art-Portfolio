@@ -13,12 +13,14 @@ function SignInForm() {
                 <lable> Email </lable>
                     <Field className="input"
                         type="email"
-                        name="email" />
+                        name="email"
+                        placeholder="email@example.com" />
 
                 <lable> Password </lable>
                     <Field className="input"
                         type="password"
-                        name="password" />
+                        name="password" 
+                        placeholder="Must have 8 characters" />
 
                 <button type="submit">Let's Go!</button>
             </Form>

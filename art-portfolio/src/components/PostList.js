@@ -3,15 +3,22 @@ import axios from 'axios';
 import ModalEdit from "./Modal";
 import EditIcon from "./EditIcon.svg";
 
-
+//************************************************************************************************ */
 const editIcon={
   zIndex: "2",
   position: "absolute",
-  marginLeft: "170px",
+  marginLeft: "1013px",
+  marginTop: "70px",
   cursor:"pointer",
 }
 
-
+ const singlePostPic={
+  display: "inherit",
+  margin: "100px auto",
+  width: "900px",
+  height: "540px"
+ }
+//************************************************************************************************ */
 
 
 class PostList extends React.Component{
@@ -85,7 +92,7 @@ class PostList extends React.Component{
 
                {/* <ModalEdit/> */}
               <img onClick={()=> {handleClick()}} src={EditIcon} style={editIcon} className="EditIcon" alt="Edit Icon"/>
-            <img src={item.src} alt={item.description}  />
+            <img style={singlePostPic} src={item.src} alt={item.description}  />
             <p >{item.description}</p>
           </div>
         </div>

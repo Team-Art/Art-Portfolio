@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 // import { Tab, Menu } from "semantic-ui-react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { Input, Menu } from 'semantic-ui-react';
 import Logo from "./Logo.svg";
 
@@ -104,11 +104,15 @@ export default class MenuExampleSecondary extends Component {
 			onClick={this.handleItemClick}
 		  />
 		  <Menu.Item
+			as={Link}
+			to="/SignIn"
 			name='Sign In'
 			active={activeItem === 'Sign In'}
 			onClick={this.handleItemClick}
 		  />
 			<Menu.Item
+			as={Link}
+			to="/SignUp"
 			style={signupbtn}
 			name='Sign Up'
 			active={activeItem === 'Sign up'}

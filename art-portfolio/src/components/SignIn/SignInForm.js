@@ -63,3 +63,18 @@ const FormikSignInForm = withFormik({
 })(SignInForm);
 
 export default FormikSignInForm
+
+//***************************************************************************** */
+//  axios.post("https://artportfoliobw.herokuapp.com/login", creds)
+//       .then(res => {
+//         localStorage.setItem(
+//           "token",
+//           res.data.token
+//         );
+//       })
+//       .catch(err => {
+//         console.log(err)
+       
+//       });
+ // poisible axios request to get the token 
+//******************************************************************************* */

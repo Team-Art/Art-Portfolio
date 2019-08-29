@@ -14,9 +14,29 @@ const editIcon={
 
  const singlePostPic={
   display: "inherit",
-  margin: "100px auto",
+  margin: "0 auto",
   width: "900px",
   height: "540px"
+ }
+
+ const singlepost={
+  fontFamily: "Roboto sans-serif",
+ }
+
+ const likesStyle={
+  marginLeft: "270px",
+ }
+
+ const description={
+  marginLeft: "270px",
+  marginTop: "20px",
+  fontSize: "18px",
+  width: "100%",
+ }
+
+ const name={
+  fontSize: "36px",
+  width: "19%",
  }
 //************************************************************************************************ */
 
@@ -46,24 +66,8 @@ class PostList extends React.Component{
       })
     }
 
-    toggleLikes = () => {
-      if(!this.state.liked){
-          this.setState(prevState => ({
-              likes: prevState.likes + 1, 
-              liked: !prevState.liked
-          }))} else if (this.state.liked) {
-              this.setState(prevState => ({ 
-                  likes: prevState.likes - 1,
-                  liked: !prevState.liked
-              }))
-          }
-      };
-
-      
-
-      
-
-    render(){
+    
+      render(){
       console.log("item", this.state.item)
       console.log("props: ", this.props)
       
@@ -71,29 +75,22 @@ class PostList extends React.Component{
       const item = this.state.item;
     return (
 
-      <div className="single-post-page">
+      <div >
         <div className="single-post-container">
           <div className="post-container">
             <header>
                 {/* <img src={item.avatar} alt={`${item.fname} ${item.lname}`}  /> */}
-                <p>{item.fname} {item.lname}</p>
+                <p style={name}>{item.fname} {item.lname}</p>
             </header>
           <div>
-          <p >
+          <p style={likesStyle}>
                 <i className={`fas fa-heart ${this.state.liked ? `liked` : null}`} 
                 onClick={this.toggleLikes}>
-            </i> {item.likes + this.state.likes}</p>
-          </div>
-               
-
-           <img  src={EditIcon} style={editIcon}  className="EditIcon" alt="Edit Icon"/>
-      {EditOnclick ? (<ModalEdit/>) : console.log('test')}
-     
-
-               {/* <ModalEdit/> */}
-              <img onClick={()=> {handleClick()}} src={EditIcon} style={editIcon} className="EditIcon" alt="Edit Icon"/>
-            <img style={singlePostPic} src={item.src} alt={item.description}  />
-            <p >{item.description}</p>
+             </i></p>  
+          </div> 
+               <ModalEdit/>
+             <img style={singlePostPic} src={item.src} alt={item.description}  />
+            <p style={description}>{item.description}</p>
           </div>
         </div>
       </div>
@@ -101,17 +98,5 @@ class PostList extends React.Component{
   } 
 }
 
-let EditOnclick= false;
-
-function handleClick(){
-  EditOnclick?  EditOnclick= false: EditOnclick= true; 
-  // setTimeout(()=>{
-  //   EditOnclick=false;
-  //   console.log(EditOnclick)
-    
-  // }, 1000)
- console.log('HandleClick', EditOnclick);
-
-}  
 
 export default PostList;

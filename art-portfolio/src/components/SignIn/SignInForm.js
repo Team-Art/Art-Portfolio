@@ -43,11 +43,11 @@ const FormikSignInForm = withFormik({
 
     validationSchema: Yup.object().shape({
         email: Yup.string()
-          .email()
-          .required(),
+          .email("Not a valid email")
+          .required("Please enter your email"),
         password: Yup.string()
-          .min(8)
-          .required(),
+          .min(8, "Password needs to be atleast 8 characters long")
+          .required("Please enter a password"),
       }),
   
     handleSubmit(values) {

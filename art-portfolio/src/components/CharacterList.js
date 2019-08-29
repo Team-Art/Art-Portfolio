@@ -20,7 +20,7 @@ export default function CharacterList() {
 
 
   return (
-    <section className="character-list grid-view">
+    <section className="character-list grid-view" style={{marginBottom: 200}}>
 
       {characters.filter( post => post.likes > 2500 ).map((character,index) => <CharacterCard key={index} character={character}/>)}
     

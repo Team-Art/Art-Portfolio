@@ -9,7 +9,7 @@ justifyContent:"center",
 maxWidth:"1440px",
 height:"150px",
 background:"linear-gradient( #3F3356,  #1A051D)",
-marginTop: "200px",
+marginTop: "0px",
 }
 
 const upper={

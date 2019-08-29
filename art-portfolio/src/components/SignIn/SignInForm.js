@@ -13,20 +13,21 @@ function SignInForm({errors, touched}) {
             <Form className="form signInForm">
             <p>Sign In</p>
                 <lable> Email </lable>
-                {touched.email && errors.email && <p class="error">{errors.email}</p>}
                     <Field className="input"
                         type="email"
                         name="email"
                         placeholder="email@example.com" />
 
                 <lable> Password </lable>
-                {touched.password && errors.password && <p class="error">{errors.password}</p>}
                     <Field className="input"
                         type="password"
                         name="password" 
                         placeholder="Must have 8 characters" />
 
                 <button type="submit">Let's Go!</button>
+                {touched.email && errors.email && <p class="error">{errors.email}</p>}
+                {touched.password && errors.password && <p class="error">{errors.password}</p>}
+                
             </Form>
         </div>
     )
@@ -52,7 +53,7 @@ const FormikSignInForm = withFormik({
     handleSubmit(values) {
         console.log(values);
         axios   
-            .post("server goes here", values)
+            .post("https://artportfoliobw.herokuapp.com/login", values)
             .then(res => {
                 console.log(res)
             })

@@ -7,6 +7,7 @@ import PostList from './components/PostList';
 import './App.css';
 import SignInForm from "./components/SignIn/SignInForm"
 import SignUpForm from "./components/SignUp/SignUpForm"
+import CreatePost from "./components/CreatePost"
 
 
 function App() {

@@ -1,0 +1,16 @@
+.container{
+    margin: 0 auto 0;
+    max-width: 1441px;
+    height: 655px;
+    left: 0px;
+    background: linear-gradient(204.44deg, #BD7AE3 0%, #8461C9 100%);
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+    color: white;
+}
+
+.createContainer {
+    display: flex;
+    background-color: purple;
+}

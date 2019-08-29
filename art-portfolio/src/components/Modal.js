@@ -1,54 +1,31 @@
-import React, { Component } from 'react'
-import { Button, Header, Image, Modal } from 'semantic-ui-react'
+import React from 'react'
+import { Header, Image, Modal } from 'semantic-ui-react'
+import EditIcon from "./EditIcon.svg";
+import axios from 'axios';
 
-class ModalEdit extends Component {
-  state = { open: false }
 
-  show = (dimmer) => () => this.setState({ dimmer, open: true })
-  close = () => this.setState({ open: false })
-
-  render() {
-    const { open, dimmer } = this.state
-
-    return (
-      <div>
-        
-        
-        < div style={ {display:"inherit", zIndex:"7"}} onClick={this.show('blurring')}/>
-        
-        <Modal dimmer={dimmer} open={open} onClose={this.close}>
-          <Modal.Header>Select a Photo</Modal.Header>
-          <Modal.Content image>
-            <Image
-              wrapped
-              size='medium'
-              src='https://react.semantic-ui.com/images/avatar/large/rachel.png'
-            />
-            <Modal.Description>
-              <Header>Default Profile Image</Header>
-              <p>
-                We've found the following gravatar image associated with your
-                e-mail address.
-              </p>
-              <p>Is it okay to use this photo?</p>
-            </Modal.Description>
-          </Modal.Content>
-          <Modal.Actions>
-            <Button color='black' onClick={this.close}>
-              Nope
-            </Button>
-            <Button
-              positive
-              icon='checkmark'
-              labelPosition='right'
-              content="Yep, that's me"
-              onClick={this.close}
-            />
-          </Modal.Actions>
-        </Modal>
-      </div>
-    )
-  }
+const editIcon={
+  zIndex: "2",
+  position: "absolute",
+  marginLeft: "1033px",
+  cursor:"pointer",
 }
 
-export default ModalEdit
+ const ModalModalExample = (item) => (
+  <Modal trigger={<img  src={EditIcon} style={editIcon}  alt="Edit Icon"/>}>
+    <Modal.Header>{item.fname} {item.lname}</Modal.Header>
+    <Modal.Content image>
+      <Image wrapped size='medium' src='https://react.semantic-ui.com/images/avatar/large/rachel.png' />
+      <Modal.Description>
+        <Header>Default Profile Image</Header>
+        <p>
+          We've found the following gravatar image associated with your e-mail
+          address.
+        </p>
+        <p>Is it okay to use this photo?</p>
+      </Modal.Description>
+    </Modal.Content>
+  </Modal>
+)
+ 
+export default ModalModalExample

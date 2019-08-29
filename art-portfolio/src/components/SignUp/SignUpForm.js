@@ -83,3 +83,25 @@ const FormikSignUpForm = withFormik({
 })(SignUpForm);
 
 export default FormikSignUpForm
+
+
+
+
+//**************************************************************** */
+
+
+// axios.post("https://artportfoliobw.herokuapp.com/signup", creds)
+//       .then(res => {
+//         localStorage.setItem(
+//           "token",
+//           res.data.token
+//         );
+        
+//       })
+//       .catch(err => {
+//         console.log(err)
+       
+//       });
+
+    
+ //********************************************************************** */

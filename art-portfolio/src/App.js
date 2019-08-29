@@ -11,15 +11,20 @@ import SignUpForm from "./components/SignUp/SignUpForm"
 
 function App() {
   return (
+    <section>
+    <div >
+         <TabNav/>
+      </div>
     <main >
-      <TabNav/>
+      
+     
       <Route exact path="/" component={CharacterList}/>
       <Route exact path='/post/:photoId' render={props=> (<PostList {...props}/>)}/>
       <Route path="/SignIn" component={SignInForm}/>
       <Route path="/SignUp" component={SignUpForm}/>
-      {/* <CharacterList /> */}
       <Footer/>
     </main>
+    </section>
   );
 }
 

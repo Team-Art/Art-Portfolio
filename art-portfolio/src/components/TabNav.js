@@ -51,11 +51,10 @@ const signupbtn ={
 
 const mainMenu={
 	display: "flex",
-    justifyContent: "flex-end",
-	fontSize: "1.3rem",
-	':hover': {
-		color: '#B66CFF'
-	}
+    justifyContent:"center",
+    fontSize: "1.3rem",
+	background: "#f8f8f8",
+	marginBottom: "140px",
 }
 
 const logoText={

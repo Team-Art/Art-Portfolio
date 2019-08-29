@@ -91,7 +91,7 @@ export default class MenuExampleSecondary extends Component {
 		  
 		<Menu secondary style={mainMenu}>
 			
-			<img src={Logo} style={logo} className="App-logo" alt="logo" />
+			<img src={Logo} style={logo}  alt="logo" />
             <h2 style={logoText}>Art Portfolio</h2>
 		  <Menu.Item
 			name='Browse'

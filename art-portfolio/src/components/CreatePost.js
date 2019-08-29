@@ -10,7 +10,6 @@ function CreatePost() {
                     <p>upload</p>
                 </div>
                 <div>
-                    <p>createpost</p>
                 <form>
                     upload
                 </form>

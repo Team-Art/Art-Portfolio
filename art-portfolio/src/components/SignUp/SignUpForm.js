@@ -12,7 +12,9 @@ function SignUpForm({errors, touched}) {
             <p class="title">Create Account</p>
             <Form className="form signUpForm">
                 <div class="card">
+
                 {touched.fname && errors.fname && <p class="error">{errors.fname}</p>} 
+
                 <lable>First Name</lable>
                     <Field className="input firstNameField"
                         type="text"
@@ -25,7 +27,6 @@ function SignUpForm({errors, touched}) {
                         name="lastName" />
                 </div>
                 <div class="card">
-                {touched.email && errors.email && <p class="error">{errors.email}</p>}
                 <lable>Email</lable>
                     <Field className="input signUpEmailField"
                         type="email"
@@ -33,15 +34,19 @@ function SignUpForm({errors, touched}) {
                         placeholder="email@example.com"/>
                 </div>
                 <div class="card">
-                {touched.password && errors.password && <p class="error">{errors.password}</p>}
                 <lable>Password</lable>
                     <Field className="input signUpPassField"
                         type="password"
                         name="password"
                         placeholder="Must have 8 characters" />
                 </div>
+
                 <button class="signUpButton" type="submit">Let's Go!</button>
+                
             </Form>
+            {touched.firstName && errors.firstName && <p class="error">{errors.firstName}</p>} 
+            {touched.email && errors.email && <p class="error">{errors.email}</p>}
+            {touched.password && errors.password && <p class="error">{errors.password}</p>}
         </div>
     )
 }
@@ -58,12 +63,18 @@ const FormikSignUpForm = withFormik({
 
     validationSchema: Yup.object().shape({
         email: Yup.string()
-          .email()
-          .required(),
+          .email("Not a valid email")
+          .required("Please enter your email"),
         password: Yup.string()
+
           .min(8)
           .required(),
         fname: Yup.string()
+
+          .min(8, "Password needs to be atleast 8 characters long")
+          .required("Please enter a password"),
+        firstName: Yup.string()
+
             .required("Your first name is required"),
       }),
   
@@ -71,7 +82,9 @@ const FormikSignUpForm = withFormik({
         console.log(values);
         const SINGIN_URL= "https://artportfoliobw.herokuapp.com/signup"
         axios   
+
             .post(SINGIN_URL, values)
+
             .then(res => {
                 localStorage.setItem(
                     "token", 

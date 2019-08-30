@@ -13,20 +13,21 @@ function SignInForm({errors, touched}) {
             <Form className="form signInForm">
             <p>Sign In</p>
                 <lable> Email </lable>
-                {touched.email && errors.email && <p class="error">{errors.email}</p>}
                     <Field className="input"
                         type="email"
                         name="email"
                         placeholder="email@example.com" />
 
                 <lable> Password </lable>
-                {touched.password && errors.password && <p class="error">{errors.password}</p>}
                     <Field className="input"
                         type="password"
                         name="password" 
                         placeholder="Must have 8 characters" />
 
                 <button type="submit">Let's Go!</button>
+                {touched.email && errors.email && <p class="error">{errors.email}</p>}
+                {touched.password && errors.password && <p class="error">{errors.password}</p>}
+                
             </Form>
         </div>
     )
@@ -42,18 +43,20 @@ const FormikSignInForm = withFormik({
 
     validationSchema: Yup.object().shape({
         email: Yup.string()
-          .email()
-          .required(),
+          .email("Not a valid email")
+          .required("Please enter your email"),
         password: Yup.string()
-          .min(8)
-          .required(),
+          .min(8, "Password needs to be atleast 8 characters long")
+          .required("Please enter a password"),
       }),
   
     handleSubmit(values) {
         console.log(values);
         const URL = "https://artportfoliobw.herokuapp.com/login";
         axios   
+
             .post(URL, values)
+
             .then(res => {
                 localStorage.setItem(
                     "token", 

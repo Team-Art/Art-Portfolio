@@ -1,5 +1,5 @@
-.container{
-    margin: 0 auto 0;
+.container {
+    margin: -140px auto 0;
     max-width: 1441px;
     height: 655px;
     left: 0px;
@@ -87,10 +87,6 @@ color: white;
 font-size: 18px;
 margin: 10px 0 0 37.5%;
 
-}
-
-.signUpButton {
-    margin: 15px 0 0 71%;
 }
 
 .error {

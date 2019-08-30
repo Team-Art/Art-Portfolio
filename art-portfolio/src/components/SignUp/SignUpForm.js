@@ -12,13 +12,16 @@ function SignUpForm({errors, touched}) {
             <p class="title">Create Account</p>
             <Form className="form signUpForm">
                 <div class="card">
+
+                {touched.fname && errors.fname && <p class="error">{errors.fname}</p>} 
+
                 <lable>First Name</lable>
                     <Field className="input firstNameField"
                         type="text"
-                        name="firstName" />
-                </div>
-                <div class="card">
-                <lable> Last Name</lable>
+                        name="fname" />
+                </div>                        {/*  LastName is not accepted by the server form is working if we remove it */}
+                <div class="card">             
+                <lable> Last Name</lable>                       
                     <Field className="input lastNameField"
                         type="text"
                         name="lastName" />
@@ -49,10 +52,10 @@ function SignUpForm({errors, touched}) {
 }
 
 const FormikSignUpForm = withFormik({
-    mapPropsToValues({ firstName, lastName, email, password }) {
+    mapPropsToValues({ fname, lastName, email, password }) {
         return {
-            firstName: firstName || "",
-            lastName: lastName || "",
+            fname: fname || "",
+            lastName: lastName || "", //have to be removed too 
             email: email || "",
             password: password || ""
         };
@@ -63,17 +66,30 @@ const FormikSignUpForm = withFormik({
           .email("Not a valid email")
           .required("Please enter your email"),
         password: Yup.string()
+
+          .min(8)
+          .required(),
+        fname: Yup.string()
+
           .min(8, "Password needs to be atleast 8 characters long")
           .required("Please enter a password"),
         firstName: Yup.string()
+
             .required("Your first name is required"),
       }),
   
     handleSubmit(values) {
         console.log(values);
+        const SINGIN_URL= "https://artportfoliobw.herokuapp.com/signup"
         axios   
-            .post("https://artportfoliobw.herokuapp.com/signup", values)
+
+            .post(SINGIN_URL, values)
+
             .then(res => {
+                localStorage.setItem(
+                    "token", 
+                    res.data.token
+                )
                 console.log(res)
             })
             .catch(err => {
@@ -87,21 +103,3 @@ export default FormikSignUpForm
 
 
 
-//**************************************************************** */
-
-
-// axios.post("https://artportfoliobw.herokuapp.com/signup", creds)
-//       .then(res => {
-//         localStorage.setItem(
-//           "token",
-//           res.data.token
-//         );
-        
-//       })
-//       .catch(err => {
-//         console.log(err)
-       
-//       });
-
-    
- //********************************************************************** */

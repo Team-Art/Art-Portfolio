@@ -4,6 +4,7 @@ import EditIcon from "./EditIcon.svg";
 
 
 
+ 
 const editIcon={
   zIndex: "2",
   position: "absolute",
@@ -11,10 +12,11 @@ const editIcon={
   cursor:"pointer",
 }
 
- const ModalModalExample = (item) => (
+ const ModalModalExample = (props) => (
+
   
   <Modal trigger={<img  src={EditIcon} style={editIcon}  alt="Edit Icon"/>}>
-    <Modal.Header>{item.fname} {item.lname}</Modal.Header>
+    <Modal.Header>{props.as.fname} {props.as.fname}</Modal.Header>
     <Modal.Content image>
       <Image wrapped size='medium' src='https://react.semantic-ui.com/images/avatar/large/rachel.png' />
       <Modal.Description>
@@ -28,7 +30,14 @@ const editIcon={
     </Modal.Content>
   </Modal>
   
+
+
   
 )
+
+
+  
+
+
  
 export default ModalModalExample

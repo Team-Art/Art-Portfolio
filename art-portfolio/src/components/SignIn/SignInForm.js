@@ -52,30 +52,22 @@ const FormikSignInForm = withFormik({
   
     handleSubmit(values) {
         console.log(values);
+        const URL = "https://artportfoliobw.herokuapp.com/login";
         axios   
-            .post("https://artportfoliobw.herokuapp.com/login", values)
+
+            .post(URL, values)
+
             .then(res => {
+                localStorage.setItem(
+                    "token", 
+                    res.data.token
+                )
                 console.log(res)
             })
             .catch(err => {
-                console.log(err)
+                console.log(err.response.data)
             });
     }
 })(SignInForm);
 
 export default FormikSignInForm
-
-//***************************************************************************** */
-//  axios.post("https://artportfoliobw.herokuapp.com/login", creds)
-//       .then(res => {
-//         localStorage.setItem(
-//           "token",
-//           res.data.token
-//         );
-//       })
-//       .catch(err => {
-//         console.log(err)
-       
-//       });
- // poisible axios request to get the token 
-//******************************************************************************* */

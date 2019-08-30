@@ -1,7 +1,7 @@
 import React from 'react'
 import { Header, Image, Modal } from 'semantic-ui-react'
 import EditIcon from "./EditIcon.svg";
-import axios from 'axios';
+
 
 
 const editIcon={
@@ -12,6 +12,7 @@ const editIcon={
 }
 
  const ModalModalExample = (item) => (
+  
   <Modal trigger={<img  src={EditIcon} style={editIcon}  alt="Edit Icon"/>}>
     <Modal.Header>{item.fname} {item.lname}</Modal.Header>
     <Modal.Content image>
@@ -26,6 +27,8 @@ const editIcon={
       </Modal.Description>
     </Modal.Content>
   </Modal>
+  
+  
 )
  
 export default ModalModalExample

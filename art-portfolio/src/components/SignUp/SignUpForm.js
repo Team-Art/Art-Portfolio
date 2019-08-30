@@ -10,21 +10,13 @@ function SignUpForm({errors, touched}) {
         <div class="container">
             <p class="msg">A space where you can discover and connect with designers worldwide.</p>
             <p class="title">Create Account</p>
-            <Form className="form signUpForm">
+            <Form className="form">
                 <div class="card">
-
-                {touched.fname && errors.fname && <p class="error">{errors.fname}</p>} 
 
                 <lable>First Name</lable>
                     <Field className="input firstNameField"
                         type="text"
                         name="fname" />
-                </div>                        {/*  LastName is not accepted by the server form is working if we remove it */}
-                <div class="card">             
-                <lable> Last Name</lable>                       
-                    <Field className="input lastNameField"
-                        type="text"
-                        name="lastName" />
                 </div>
                 <div class="card">
                 <lable>Email</lable>
@@ -44,7 +36,7 @@ function SignUpForm({errors, touched}) {
                 <button class="signUpButton" type="submit">Let's Go!</button>
                 
             </Form>
-            {touched.firstName && errors.firstName && <p class="error">{errors.firstName}</p>} 
+            {touched.fname && errors.fname && <p class="error">{errors.fname}</p>} 
             {touched.email && errors.email && <p class="error">{errors.email}</p>}
             {touched.password && errors.password && <p class="error">{errors.password}</p>}
         </div>
@@ -52,10 +44,9 @@ function SignUpForm({errors, touched}) {
 }
 
 const FormikSignUpForm = withFormik({
-    mapPropsToValues({ fname, lastName, email, password }) {
+    mapPropsToValues({ fname, email, password }) {
         return {
             fname: fname || "",
-            lastName: lastName || "", //have to be removed too 
             email: email || "",
             password: password || ""
         };
@@ -65,16 +56,12 @@ const FormikSignUpForm = withFormik({
         email: Yup.string()
           .email("Not a valid email")
           .required("Please enter your email"),
+
         password: Yup.string()
-
-          .min(8)
-          .required(),
-        fname: Yup.string()
-
           .min(8, "Password needs to be atleast 8 characters long")
           .required("Please enter a password"),
-        firstName: Yup.string()
 
+        fname: Yup.string()
             .required("Your first name is required"),
       }),
   

@@ -1,16 +1,10 @@
 import React from 'react';
 import axios from 'axios';
-import ModalEdit from "./Modal";
-import EditIcon from "./EditIcon.svg";
+import Modal from "./Modal";
+// import EditIcon from "./EditIcon.svg";
 
 //************************************************************************************************ */
-const editIcon={
-  zIndex: "2",
-  position: "absolute",
-  marginLeft: "1013px",
-  marginTop: "70px",
-  cursor:"pointer",
-}
+
 
  const singlePostPic={
   display: "inherit",
@@ -23,9 +17,7 @@ const editIcon={
   fontFamily: "Roboto sans-serif",
  }
 
- const likesStyle={
-  marginLeft: "270px",
- }
+ 
 
  const description={
   marginLeft: "270px",
@@ -54,7 +46,7 @@ class PostList extends React.Component{
     
     componentDidMount() {
       axios
-      .get(`https://artportfoliobw.herokuapp.com/${this.props.match.params.photoId}`)
+.get(`https://artportfoliobw.herokuapp.com/${this.props.match.params.photoId}`)
       .then(res => {
         console.log(res)
         this.setState({ 
@@ -77,18 +69,11 @@ class PostList extends React.Component{
 
       <div >
         <div className="single-post-container">
-          <div className="post-container">
+          <div style={singlepost} className="post-container">
             <header>
-                {/* <img src={item.avatar} alt={`${item.fname} ${item.lname}`}  /> */}
                 <p style={name}>{item.fname} {item.lname}</p>
             </header>
-          <div>
-          <p style={likesStyle}>
-                <i className={`fas fa-heart ${this.state.liked ? `liked` : null}`} 
-                onClick={this.toggleLikes}>
-             </i></p>  
-          </div> 
-               <ModalEdit/>
+               <Modal/>
              <img style={singlePostPic} src={item.src} alt={item.description}  />
             <p style={description}>{item.description}</p>
           </div>

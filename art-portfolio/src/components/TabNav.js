@@ -1,52 +1,17 @@
 import React, {Component} from "react";
-// import { Tab, Menu } from "semantic-ui-react";
-import { NavLink, Link } from "react-router-dom";
-import { Input, Menu } from 'semantic-ui-react';
+import { Link } from "react-router-dom";
+import { Menu } from 'semantic-ui-react';
 import Logo from "./Logo.svg";
-
-// // TODO: Add missing tabs below
-// export default function TabNav() {
-
-// };
-// const Nav = props => (
-// 	<NavLink
-// 		exact
-// 		{...props}
-// 		activeClassName="active"
-// 	/>
-// );
-                                                   
-// const createLabel = (labelText) => <span>{labelText}</span>
-
-// const welcomeLabel = createLabel("Browse","Browse")
-// const characterLabel = createLabel("Home", "Home")
-// const locationLabel = createLabel("Sign In", "Sign In")
-// const episodeLabel = createLabel("Sign Up", "Sign Up")
-
-// const panes = [
-// 	{ menuItem: <Menu.Item key='home' as={Nav} to={`/`} content={welcomeLabel} /> },
-// 	{ menuItem: <Menu.Item key='characters' as={Nav} to={`/characters`} content={characterLabel} /> },
-// 	{ menuItem: <Menu.Item key='locations' as={Nav} to={`/locations`} content={locationLabel} /> },
-// 	{ menuItem: <Menu.Item key='episodes' as={Nav} to={`/episodes`} content={episodeLabel} /> }
-// ]
-
-// const TabNav = () => <Tab panes={panes} renderActiveOnly={false} />
-
-
-
-// export default TabNav
-const Nav = props => (
-		<NavLink
-			exact
-			{...props}
-			activeClassName="active"
-		/>
-	);
+import "./TabNav.css"
 
 //**************************************************** */	
 
 const signupbtn ={
-	border:"1.5px solid #B66CFF"
+	border:"1.5px solid #B66CFF",
+	display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+    width: "130px"
 }
 
 const mainMenu={
@@ -75,8 +40,9 @@ const logo={
 
 //***************************************************** */
 
+
 export default class MenuExampleSecondary extends Component {
-	state = { activeItem: 'home' }
+	state = { activeItem: 'Home' }
   
 	handleItemClick = (e, { name }) => this.setState({ activeItem: name })
   
@@ -85,33 +51,30 @@ export default class MenuExampleSecondary extends Component {
   
 	  return (
 		
-		
-	
-		  
-		<Menu secondary style={mainMenu}>
+		  <Menu secondary style={mainMenu}>
 			
 			<img src={Logo} style={logo}  alt="logo" />
             <h2 style={logoText}>Art Portfolio</h2>
-		  <Menu.Item
+		  <Menu.Item className="menu-text"
 			name='Browse'
 			active={activeItem === 'Browse'}
 			onClick={this.handleItemClick}
 		  />
-		  <Menu.Item
+		  <Menu.Item className="menu-text"
 		  	as={Link}
 		  	to="/"
 			name='Home'
 			active={activeItem === 'Home'}
 			onClick={this.handleItemClick}
 		  />
-		  <Menu.Item
+		  <Menu.Item className="menu-text"
 			as={Link}
 			to="/SignIn"
 			name='Sign In'
 			active={activeItem === 'Sign In'}
 			onClick={this.handleItemClick}
 		  />
-			<Menu.Item
+			<Menu.Item className="menu-text"
 			as={Link}
 			to="/SignUp"
 			style={signupbtn}

@@ -33,7 +33,7 @@ function SignUpForm({errors, touched}) {
                         placeholder="Must have 8 characters" />
                 </div>
 
-                <button class="signUpButton" type="submit">Let's Go!</button>
+                <button className="signUpButton" type="submit">Let's Go!</button>
                 
             </Form>
             {touched.fname && errors.fname && <p class="error">{errors.fname}</p>} 

@@ -7,7 +7,7 @@ import * as Yup from "yup";
 function SignInForm({errors, touched}) {
 
     return(
-        <div class="container">
+        <div className="container">
             
 
             <Form className="form signInForm">

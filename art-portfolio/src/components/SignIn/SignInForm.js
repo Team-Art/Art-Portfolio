@@ -25,8 +25,8 @@ function SignInForm({errors, touched}) {
                         placeholder="Must have 8 characters" />
 
                 <button type="submit">Let's Go!</button>
-                {touched.email && errors.email && <p class="error">{errors.email}</p>}
-                {touched.password && errors.password && <p class="error">{errors.password}</p>}
+                {touched.email && errors.email && <p className="error">{errors.email}</p>}
+                {touched.password && errors.password && <p className="error">{errors.password}</p>}
                 
             </Form>
         </div>

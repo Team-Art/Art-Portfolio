@@ -36,9 +36,9 @@ function SignUpForm({errors, touched}) {
                 <button className="signUpButton" type="submit">Let's Go!</button>
                 
             </Form>
-            {touched.fname && errors.fname && <p class="error">{errors.fname}</p>} 
-            {touched.email && errors.email && <p class="error">{errors.email}</p>}
-            {touched.password && errors.password && <p class="error">{errors.password}</p>}
+            {touched.fname && errors.fname && <p className="error">{errors.fname}</p>} 
+            {touched.email && errors.email && <p className="error">{errors.email}</p>}
+            {touched.password && errors.password && <p className="error">{errors.password}</p>}
         </div>
     )
 }

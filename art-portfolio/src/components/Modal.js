@@ -8,8 +8,8 @@ import EditIcon from "./EditIcon.svg";
 const editIcon={
   zIndex: "2",
   position: "absolute",
-  marginLeft: "1033px",
   cursor:"pointer",
+  marginLeft: "auto",
 }
 
  const ModalModalExample = (props) => (

@@ -13,20 +13,20 @@ function SignUpForm({errors, touched}) {
             <Form className="form">
                 <div className="card">
 
-                <lable>First Name</lable>
+                <label>First Name</label>
                     <Field className="input firstNameField"
                         type="text"
                         name="fname" />
                 </div>
                 <div className="card">
-                    <lable>Email</lable>
+                    <label>Email</label>
                     <Field className="input signUpEmailField"
                         type="email"
                         name="email" 
                         placeholder="email@example.com"/>
                 </div>
                 <div className="card">
-                    <lable>Password</lable>
+                    <label>Password</label>
                     <Field className="input signUpPassField"
                         type="password"
                         name="password"

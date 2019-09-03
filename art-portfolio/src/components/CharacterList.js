@@ -12,7 +12,7 @@ export default function CharacterList() {
   useEffect(() => {
     
     axios
-        .get(`https://artportfoliobw.herokuapp.com/`)
+    .get(`https://artportfoliobw.herokuapp.com/`)
         .then(response => {setCharacters(response.data)})
        
         .catch(error => console.log('Unexpected Error: ',error))
@@ -23,7 +23,7 @@ export default function CharacterList() {
     <section className="character-list grid-view" style={{marginBottom: 200}}>
 
       {characters.filter( post => post.likes > 2500 ).map((character,index) => <CharacterCard key={index} character={character}/>)}
-    
+      
     </section>
   );
 };

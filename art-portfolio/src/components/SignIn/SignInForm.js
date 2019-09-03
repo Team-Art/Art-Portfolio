@@ -12,13 +12,13 @@ function SignInForm({errors, touched}) {
 
             <Form className="form signInForm">
             <p>Sign In</p>
-                <lable> Email </lable>
+                <label> Email </label>
                     <Field className="input"
                         type="email"
                         name="email"
                         placeholder="email@example.com" />
 
-                <lable> Password </lable>
+                <label> Password </label>
                     <Field className="input"
                         type="password"
                         name="password" 
@@ -50,8 +50,10 @@ const FormikSignInForm = withFormik({
           .required("Please enter a password"),
       }),
   
-    handleSubmit(values) {
+    handleSubmit(values, formikbag) {
         console.log(values);
+        console.log('formikbag', formikbag.props);
+        
         const URL = "https://artportfoliobw.herokuapp.com/login";
         axios   
 
@@ -62,7 +64,8 @@ const FormikSignInForm = withFormik({
                     "token", 
                     res.data.token
                 )
-                console.log(res)
+                console.log("the res on line 67 signinForm", res)
+                formikbag.props.history.push('/profile');
             })
             .catch(err => {
                 console.log(err.response.data)

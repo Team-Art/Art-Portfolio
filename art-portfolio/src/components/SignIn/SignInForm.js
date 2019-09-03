@@ -50,8 +50,10 @@ const FormikSignInForm = withFormik({
           .required("Please enter a password"),
       }),
   
-    handleSubmit(values) {
+    handleSubmit(values, formikbag) {
         console.log(values);
+        console.log('formikbag', formikbag.props);
+        
         const URL = "https://artportfoliobw.herokuapp.com/login";
         axios   
 
@@ -63,6 +65,7 @@ const FormikSignInForm = withFormik({
                     res.data.token
                 )
                 console.log(res)
+                formikbag.props.history.push('/profile');
             })
             .catch(err => {
                 console.log(err.response.data)

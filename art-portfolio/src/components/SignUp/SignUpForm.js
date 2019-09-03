@@ -7,38 +7,38 @@ import * as Yup from "yup";
 function SignUpForm({errors, touched}) {
 
     return(
-        <div class="container">
-            <p class="msg">A space where you can discover and connect with designers worldwide.</p>
-            <p class="title">Create Account</p>
+        <div className="container">
+            <p className="msg">A space where you can discover and connect with designers worldwide.</p>
+            <p className="title">Create Account</p>
             <Form className="form">
-                <div class="card">
+                <div className="card">
 
                 <lable>First Name</lable>
                     <Field className="input firstNameField"
                         type="text"
                         name="fname" />
                 </div>
-                <div class="card">
-                <lable>Email</lable>
+                <div className="card">
+                    <lable>Email</lable>
                     <Field className="input signUpEmailField"
                         type="email"
                         name="email" 
                         placeholder="email@example.com"/>
                 </div>
-                <div class="card">
-                <lable>Password</lable>
+                <div className="card">
+                    <lable>Password</lable>
                     <Field className="input signUpPassField"
                         type="password"
                         name="password"
                         placeholder="Must have 8 characters" />
                 </div>
 
-                <button class="signUpButton" type="submit">Let's Go!</button>
+                <button className="signUpButton" type="submit">Let's Go!</button>
                 
             </Form>
-            {touched.fname && errors.fname && <p class="error">{errors.fname}</p>} 
-            {touched.email && errors.email && <p class="error">{errors.email}</p>}
-            {touched.password && errors.password && <p class="error">{errors.password}</p>}
+            {touched.fname && errors.fname && <p className="error">{errors.fname}</p>} 
+            {touched.email && errors.email && <p className="error">{errors.email}</p>}
+            {touched.password && errors.password && <p className="error">{errors.password}</p>}
         </div>
     )
 }

@@ -7,10 +7,7 @@ import Modal from "./Modal";
 
 
  const singlePostPic={
-  display: "inherit",
-  margin: "0 auto",
-  width: "900px",
-  height: "540px"
+  width: "100%"
  }
 
  const singlepost={
@@ -20,15 +17,21 @@ import Modal from "./Modal";
  
 
  const description={
-  marginLeft: "270px",
-  marginTop: "20px",
+  margin: "20px 0 20px 13%",
   fontSize: "18px",
-  width: "100%",
+  width: "87%",
  }
 
  const name={
   fontSize: "36px",
   width: "19%",
+  textAlign: "center"
+ }
+
+ const container={
+  display: "relative",
+  margin: "0 auto",
+  width: "80%"
  }
 //************************************************************************************************ */
 
@@ -74,8 +77,10 @@ class PostList extends React.Component{
             <header>
                 <p style={name}>{item.fname} {item.lname}</p>
             </header>
+              <div style={container}>
                <Modal as={item}/>
              <img style={singlePostPic} src={item.src} alt={item.description}  />
+              </div>
             <p style={description}>{item.description}</p>
           </div>
         </div>

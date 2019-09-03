@@ -43,7 +43,7 @@ return(
 
      <ul style={lower}>
 
-         <li>@2019, Art Station</li>
+         <li>@2019 Art Portfolio</li>
          <li>|</li>
          <li>Term of Service</li>
          <li>|</li>

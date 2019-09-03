@@ -10,8 +10,8 @@ import DescriptionForm from './DescriptionForm';
 const editIcon={
   zIndex: "2",
   position: "absolute",
-  marginLeft: "1033px",
   cursor:"pointer",
+  marginLeft: "auto",
 }
 const styleHeader={
   textAlign: "center",

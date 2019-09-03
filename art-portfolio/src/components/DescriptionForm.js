@@ -1,6 +1,5 @@
 import React from 'react';
 import { withFormik, Form, Field } from "formik";
-import axios from "axios";
 import * as Yup from "yup";
 import axiosWithAuth from "./axiosAuth";
 
@@ -63,8 +62,8 @@ const FormikDescriptionForm = withFormik({
     handleSubmit(values) {
         console.log(values);
         console.log('test');
-        const testtoken = localStorage;
-        const URL = "https://artportfoliobw.herokuapp.com/photid";
+       
+        const URL = "https://artportfoliobw.herokuapp.com/:photid";
          
 
         axiosWithAuth().put(URL, values)

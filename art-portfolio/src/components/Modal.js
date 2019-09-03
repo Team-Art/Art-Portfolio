@@ -1,5 +1,5 @@
 import React from 'react'
-import { Header, Image, Modal } from 'semantic-ui-react'
+import { Image, Modal } from 'semantic-ui-react'
 import EditIcon from "./EditIcon.svg";
 
 import DescriptionForm from './DescriptionForm';
